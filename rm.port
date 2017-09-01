@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# rm.port some_port
+
+PORT_NAME=$1
+
+rm -rf $(prt-get path $PORT_NAME)

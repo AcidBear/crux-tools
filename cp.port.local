@@ -1,0 +1,14 @@
+#!/bin/sh
+# 
+# cp.ports.local some_port new_port
+
+PORTS_DIR=
+PORT_NAME=$1
+NEW_PORT_NAME=$2
+PORTS_USER=
+PORTS_GROUP=
+
+cp $(prt-get path $1) $PORTS_DIR/$NEW_PORT_NAME
+
+chown $PORTS_USER:$PORTS_GROUP -R $PORTS_DIR/$NEW_PORT_NAME
+chmod 770 -R $PORTS_DIR/$NEW_PORT_NAME

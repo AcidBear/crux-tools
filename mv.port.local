@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# mv.port.local some_port
+
+PORTS_DIR=
+PORT_NAME=$1
+PORTS_USER=
+PORTS_GROUP=
+
+mv $(prt-get path $PORT_NAME) $PORTS_DIR/
+
+chown $PORTS_USER:$PORTS_GROUP -R $PORTS_DIR/$PORT_NAME
+chmod 770 -R $PORTS_DIR/$PORT_NAME

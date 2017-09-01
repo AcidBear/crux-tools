@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# mk.port some_new_port
+
+PORT_NAME=$1
+PORTS_DIR=
+PORTS_USER=
+PORTS_GROUP=
+MAINTAINER=""
+
+mkdir $PORTS_DIR/$PORT_NAME
+echo "# Description: \n# Homepage:    \n# Maintainer:  $MAINTAINER\n# Depends on:  \n\nname=$PORT_NAME\nversion=\nrelease=1\nsource=()\n\nbuild() {\n    cd \$name-\$version\n}" > $PORTS_DIR/$PORT_NAME/Pkgfile
+
+chown $PORTS_USER:$PORTS_GROUP -R $PORTS_DIR/$PORT_NAME
+chmod 770 -R $PORTS_DIR/$PORT_NAME

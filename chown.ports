@@ -1,0 +1,8 @@
+#!/bin/sh
+
+PORTS_USER=
+PORTS_GROUP=
+PORTS_DIR=
+
+chown $PORTS_USER:$PORTS_GROUP -R $PORTS_DIR 
+chmod 770 -R $PORTS_DIR
